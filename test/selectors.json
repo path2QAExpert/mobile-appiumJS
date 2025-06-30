@@ -1,0 +1,16 @@
+{
+  "LoginPage": {
+    "usernameField": {
+      "android": "android=new UiSelector().resourceId(\"com.example:id/username\")",
+      "ios": "~usernameInput"
+    },
+    "passwordField": {
+      "android": "android=new UiSelector().resourceId(\"com.example:id/password\")",
+      "ios": "~passwordInput"
+    },
+    "loginButton": {
+      "android": "android=new UiSelector().text(\"Login\")",
+      "ios": "~loginBtn"
+    }
+  }
+}
