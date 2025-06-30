@@ -1,0 +1,22 @@
+{
+  "Preference": {
+    "android": "~Preference",
+    "ios": "~Preference"
+  },
+  "DefaultValues": {
+    "android": "~4. Default values",
+    "ios": "~Default Values"
+  },
+  "Checkbox": {
+    "android": "android=new UiSelector().resourceId(\"android:id/checkbox\")",
+    "ios": "-ios predicate string:type == 'XCUIElementTypeSwitch'"
+  },
+  "accessibility": {
+    "android": "~Accessibility",
+    "ios": "~Accessibility"
+  },
+  "accessibilityNodeProvider": {
+    "android": "~Accessibility",
+    "ios": "~Accessibility Node Provider"
+  }
+}

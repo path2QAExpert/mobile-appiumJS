@@ -1,4 +1,5 @@
-const videoHelper = require('./test/utils/videoHelper');
+const video = require('wdio-video-reporter');
+
 exports.config = {
   runner: 'local',
   specs: ['./test/specs/**/*.js'],
@@ -13,17 +14,20 @@ exports.config = {
   }],
   logLevel: 'info',
   framework: 'mocha',
-  reporters: ['spec', ['allure', {
+ reporters: [
+  'spec',
+  ['allure', {
     outputDir: 'allure-results',
     disableWebdriverStepsReporting: true,
     disableWebdriverScreenshotsReporting: false,
-  }]],
+  }],
+  ['video', {
+    saveAllVideos: false,  // set to true if you want to save all videos
+    videoSlowdownMultiplier: 3,
+  }]
+  ],
   services: ['appium'],
   mochaOpts: {
     timeout: 60000
   }
-
-  onPrepare: () => videoHelper.prepareDirectories(),
-  beforeTest: async () => await videoHelper.handleBeforeEach(driver),
-  afterTest: async (test) => await videoHelper.handleAfterEach(test.title, driver),
 };
